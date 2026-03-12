@@ -1,92 +1,129 @@
-
 # Korpa+
 
-Dobrodošli u Korpa+, veb prodavnicu namernica za ljubitelje kuvanja koji žele sve što im je potrebno za zdrav i kvalitetan obrok da pronađu na jednom mestu. Aplikacija omogućava korisnicima da pretražuju recepte, dodaju sastojke u korpu i organizuju svoje narudžbine jednostavno i brzo.
+Korpa+ is a web grocery store designed for cooking enthusiasts who want to find everything they need for preparing healthy and high-quality meals in one place.
 
-## Instalacija i pokretanje projekta
+The application allows users to browse recipes, automatically add ingredients to their shopping cart, and manage their orders quickly and efficiently.
 
-Pratite korake ispod da biste pokrenuli aplikaciju na svojoj lokalnoj mašini:
 
-1. Klonirajte projekat iz Git repozitorijuma na lokalnu mašinu:
+## Features
+
+### Recipes
+- Browse and search recipes
+- Filter recipes by different criteria
+- Detailed recipe view with instructions and ingredient lists
+
+### Shopping Cart
+- Automatic cart creation for each user
+- Add ingredients to the cart directly from a recipe
+- Modify quantities or remove items from the cart
+
+### Orders and Payments
+- Generate orders with user information
+- Online payment using **Stripe integration**
+- Discount coupons using the **Kuponify API**
+
+### Statistics
+- Display statistics about the most frequently added ingredients
+- Data visualization using **Chart.js**
+
+
+## Tech Stack
+
+**Backend**
+- Laravel 10
+
+**Frontend**
+- React
+
+**Database**
+- MySQL
+
+**Other Tools**
+- Stripe API (payments)
+- Kuponify API (discount coupons)
+- Chart.js (data visualization)
+
+
+## Installation and Setup
+
+Follow these steps to run the application locally.
+
+### 1. Clone the repository
+
 ```bash
-  git clone https://github.com/elab-development/internet-tehnologije-projekat-vebprodavnicasareceptima_2018_0044.git
+git clone https://github.com/milenadjeric/Online-Grocery-Store-with-Recipes.git
 ```
-2. Instalacija
+
+### 2. Navigate to the project folder
+
 ```bash
 cd korpa-plus
+```
+
+### 3. Install dependencies
+
+```bash
 composer install
 npm install
 ```
-3. Konfiguracija okruženja
 
-Kreirajte .env fajl kopiranjem postojećeg .env.example:
+### 4. Environment configuration
+
+Create a .env file by copying the example file:
 ```bash
-  cp .env.example .env
+cp .env.example .env
 ```
-Ažurirajte sledeće parametre u .env fajlu
+Update the following parameters in the .env file.
 
-- Parametri baze
+#### Database configuration
 ```
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
-DB_PORT=3306    
-DB_DATABASE=ime_baze
-DB_USERNAME=korisnicko_ime
-DB_PASSWORD=lozinka
+DB_PORT=3306
+DB_DATABASE=database_name
+DB_USERNAME=username
+DB_PASSWORD=password
 ```
 
-- Stripe API ključev
-
+#### Stripe API keys
 ```
-STRIPE_SECRET=vaš_secret_key
-STRIPE_PUBLIC=vaš_public_key
-```
-
-- Kuponify API token
-
-```
-KUPONIFY_API_TOKEN=vaš_token
+STRIPE_SECRET=your_secret_key
+STRIPE_PUBLIC=your_public_key
 ```
 
-4. Migracija baze podataka
-Pokrenite migracije za kreiranje baza i učitavanje početnih podataka.
+#### Kuponify API token
+```
+KUPONIFY_API_TOKEN=your_token
+```
+
+### 5. Run database migrations and seed data
 
 ```bash
-  php artisan migrate --seed
+php artisan migrate --seed
 ```
 
-5. Pokretanje projekta
+### 6. Start the application
 
 ```bash
 php artisan serve
 npm run dev
 ```
-## Funkcionalnosti
 
-1. Recepti
-- Pregled, filtriranje i pretraga recepata.
-- Detaljan prikaz recepta sa uputstvima i sastojcima.
-2. Korpa
-- Automatsko kreiranje korpe za svakog korisnika.
-- Dodavanje sastojaka u korpu direktno sa stranice recepta.
-- Modifikacija količina i uklanjanje stavki iz korpe.
-3. Kupovina
-- Generisanje narudžbina sa svim detaljima korisnika.
-- Plaćanje putem Stripe integracije.
-- Kuponi za popuste putem Kuponify API-ja.
-4. Statistika
-- Prikaz podataka o najčešće dodavanim sastojcima u korpu.
-- Vizualizacija korišćenjem Chart.js.
-## Tehnologije
+The application should now be available at:
+http://localhost:8000
 
-Backend: Laravel 10 
-
-Frontend: React 
-
-Baza podataka: MySQL
+## Author
+Milena Djeric
 
 
-## 
 
-Za dodatne informacije, pitanja ili prijavu grešaka, slobodno me kontaktirajte putem studentskog mejla.
+
+
+
+
+
+
+
+
+
 
